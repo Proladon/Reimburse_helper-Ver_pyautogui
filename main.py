@@ -1,11 +1,8 @@
+from core.payment_singup import Payment
 import pygetwindow as gw
 import pyautogui as auto
-from core.payment_singup import payment
 
-class main (payment):
-    def __init__(self):
-        self.win = self.win
-        self.toggle = True
+class Main (Payment):
 
     def move(self, x, y, s= None):
         auto.moveTo(x, y, s)
@@ -24,6 +21,7 @@ class main (payment):
                 input('按任意鍵繼續...')
 
 
-
-new = main()
-new.get_win()
+if __name__ == "__main__":
+    new = Main()
+    new.get_win()
+    new.payment_singup()
