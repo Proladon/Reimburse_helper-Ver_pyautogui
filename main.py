@@ -3,9 +3,8 @@ import pygetwindow as gw
 import pyautogui as auto
 
 class Main (Payment):
-
-    def move(self, x, y, s= None):
-        auto.moveTo(x, y, s)
+    def __init__(self):
+        self.toggle = True    
 
     # 啟動與放大報帳頁面
     def get_win(self):
@@ -22,6 +21,8 @@ class Main (Payment):
 
 
 if __name__ == "__main__":
-    new = Main()
-    new.get_win()
-    new.payment_singup()
+    Main = Main()
+    Main.get_win()
+
+    Main.payment_signup()
+    Main.budget_source(Main.get_win())
