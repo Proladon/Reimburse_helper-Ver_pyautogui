@@ -19,8 +19,9 @@ class Payment:
 		#點擊新增
 		move_click(data['點擊新增'])
 
-	def budget_source(self, win):
-		source_list = "1.學校經費\n2.國科會\n3.大同松公司\n4.教育部(專案計畫)"
+	def budget_source(self):
+		data = jdata['經費來源']
+		source_list = f"1.{data[0]}\n2.{data[1]}\n3.{data[2]}\n4.{data[3]}"
 		print(source_list)
 		source = input('選擇預算來源(代號): ')
 		checker = True
