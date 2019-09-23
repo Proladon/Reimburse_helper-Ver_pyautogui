@@ -28,4 +28,4 @@ if __name__ == "__main__":
 	Payment = Payment()
 	Payment.payment_signup()
 	Payment.budget_source()
-	
+	Payment.form_input()

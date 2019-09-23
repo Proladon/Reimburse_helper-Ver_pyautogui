@@ -1,20 +1,10 @@
 import pygetwindow as gw
 import pyautogui as auto
 import json, time
-
+from cmds.main_cmds import move_click, focus_dialog, payment_form_input, focus_win
 
 with open('setting.json', 'r', encoding='utf8') as jfile:
 	jdata = json.load(jfile)
-
-def move_click(data):
-	auto.moveTo(data[0], data[1], data[2])
-	auto.click()
-
-def focus_dialog():
-	target = "http://gasys.ttu.edu.tw/?filter=&tablenames=ProjectPlan&fields=departmentId,categoryId,budgetYe - Internet Explorer"
-	win = gw.getWindowsWithTitle(target)[0]
-	win.activate()
-	win.maximize()
 
 class Payment:
 	def payment_signup(self):
@@ -44,6 +34,9 @@ class Payment:
 			time.sleep(1)
 			focus_dialog()
 			move_click(data_xyz[f'選取計劃_{plan}'])
+			move_click(data_xyz['整筆儲存'])
+			time.sleep(1)
+			auto.hotkey('enter')
 		
 		#執行選取計畫
 		while checker == True:
@@ -58,6 +51,21 @@ class Payment:
 			elif source == '3':
 				works_set('教育部(專案計畫)')
 				checker = False
+			elif source == '4':
+				works_set('大同公司')
+				checker = False
+
+	def form_input(self):
+		data = jdata['支付證明申請']
+		data_xyz = data['明細檔輸入']
+		move_click(data_xyz['明細檔資料'])
+		toggle = True
+
+		while toggle == True:
+			input("請先選擇預算科目...任意鍵繼續")
+			focus_win()
+			payment_form_input()
+
 			
 
 			
