@@ -7,4 +7,11 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
 	jdata = json.load(jfile)
 
 
-    
+class Purchasing:
+
+    def purchasing_signup(self):
+        focus_win()
+        data_xyz = jdata['直接採購登錄']
+        move_click(data_xyz['點擊直接採購登錄'])
+        move_click(data_xyz['點擊新增'])
+        move_click(data_xyz['點擊查詢'])

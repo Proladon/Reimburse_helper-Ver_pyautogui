@@ -63,12 +63,12 @@ class Payment:
 		toggle = True
 
 		while toggle == True:
-			res = input("請先選擇預算科目\n...輸入'r'輸入資料\n...輸入'co'進入直接採購登錄\n...輸入'close'結束\n")
+			res = input("請先選擇預算科目\n...輸入'r'輸入資料\n...輸入'c'進入直接採購登錄")
 
 			if res == 'r':
 				focus_win()
 				payment_form_input()
-			elif res == 'close':
+			elif res == 'c':
 				toggle = False
 
 

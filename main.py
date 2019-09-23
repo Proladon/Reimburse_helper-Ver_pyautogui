@@ -1,4 +1,5 @@
 from core.payment_signup import Payment
+from core.purchasing_signup import Purchasing
 import pygetwindow as gw
 import pyautogui as auto
 import json
@@ -29,3 +30,8 @@ if __name__ == "__main__":
 	Payment.payment_signup()
 	Payment.budget_source()
 	Payment.form_input()
+
+	Purchase = Purchasing()
+	Purchase.purchasing_signup()
+
+
