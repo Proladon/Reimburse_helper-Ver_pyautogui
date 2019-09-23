@@ -1,4 +1,4 @@
-from core.payment_singup import Payment
+from core.payment_signup import Payment
 import pygetwindow as gw
 import pyautogui as auto
 import json

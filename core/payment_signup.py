@@ -55,6 +55,7 @@ class Payment:
 				works_set('大同公司')
 				checker = False
 
+	# 採購表單輸入
 	def form_input(self):
 		data = jdata['支付證明申請']
 		data_xyz = data['明細檔輸入']
@@ -62,9 +63,14 @@ class Payment:
 		toggle = True
 
 		while toggle == True:
-			input("請先選擇預算科目...任意鍵繼續")
-			focus_win()
-			payment_form_input()
+			res = input("請先選擇預算科目\n...輸入'r'輸入資料\n...輸入'co'進入直接採購登錄\n...輸入'close'結束\n")
+
+			if res == 'r':
+				focus_win()
+				payment_form_input()
+			elif res == 'close':
+				toggle = False
+
 
 			
 
