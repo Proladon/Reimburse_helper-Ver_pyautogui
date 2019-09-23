@@ -32,7 +32,7 @@ class Payment:
 			move_click(data_xyz[plan])
 			move_click(data_xyz['選取計劃按鈕'])
 			time.sleep(1)
-			focus_dialog()
+			focus_dialog(data_xyz['選取計劃視窗'])
 			move_click(data_xyz[f'選取計劃_{plan}'])
 			move_click(data_xyz['整筆儲存'])
 			time.sleep(1)

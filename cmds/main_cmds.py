@@ -10,11 +10,11 @@ def move_click(data):
 	auto.moveTo(data[0], data[1], data[2])
 	auto.click()
 
-def focus_dialog():
-	target = "http://gasys.ttu.edu.tw/?filter=&tablenames=ProjectPlan&fields=departmentId,categoryId,budgetYe - Internet Explorer"
-	win = gw.getWindowsWithTitle(target)[0]
+def focus_dialog(title):
+	win = gw.getWindowsWithTitle(title)[0]
 	win.activate()
 	win.maximize()
+	time.sleep(1)
 
 def focus_win():
 	toggle = True
@@ -50,20 +50,12 @@ def payment_form_input():
 	#用途
 	move_click(data_xyz['用途'])
 	time.sleep(1)
-	a = "http://gasys.ttu.edu.tw/?sort=purpose - 常用選項 - Internet Explorer"
-	win = gw.getWindowsWithTitle(a)[0]
-	win.activate()
-	win.maximize()
-	time.sleep(1)
+	focus_dialog(data_xyz['選取用途視窗'])
 	move_click(data_xyz['研究用'])
 
 	#交貨地點
 	move_click(data_xyz['交貨地點'])
 	time.sleep(1)
-	b = "http://gasys.ttu.edu.tw/?sort=projectedDeliveryPlace - 常用選項 - Internet Explorer"
-	win = gw.getWindowsWithTitle(b)[0]
-	win.activate()
-	win.maximize()
-	time.sleep(1)
+	focus_dialog(data_xyz['選取交貨地點視窗'])
 	move_click(data_xyz['研究室'])
 	

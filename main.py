@@ -26,10 +26,10 @@ if __name__ == "__main__":
 	Main = Main()
 	Main.get_win()
 
-	Payment = Payment()
-	Payment.payment_signup()
-	Payment.budget_source()
-	Payment.form_input()
+	# Payment = Payment()
+	# Payment.payment_signup()
+	# Payment.budget_source()
+	# Payment.form_input()
 
 	Purchase = Purchasing()
 	Purchase.purchasing_signup()
