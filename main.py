@@ -1,37 +1,34 @@
 from core.payment_signup import Payment
 from core.purchasing_signup import Purchasing
+from core.department_data_entry import Department
 import pygetwindow as gw
 import pyautogui as auto
 import json
 
-class Main ():
-	def __init__(self):
-		self.toggle = True    
-
-	# 啟動與放大報帳頁面
-	def get_win(self):
-		
-		while self.toggle == True:
-			try:
-				self.win = gw.getWindowsWithTitle('總務採購系統')[0]
-				self.win.activate()
-				self.win.maximize()
-				self.toggle = False
-			except IndexError:
-				print('請先將遊覽器頁面切換到 "總務採購系統"。')
-				input('按任意鍵繼續...')
+with open('setting.json', 'r', encoding='utf8') as jfile:
+	jdata = json.load(jfile)
 
 
 if __name__ == "__main__":
-	Main = Main()
-	Main.get_win()
-
-	# Payment = Payment()
-	# Payment.payment_signup()
-	# Payment.budget_source()
-	# Payment.form_input()
-
+	Payment = Payment()
 	Purchase = Purchasing()
-	Purchase.purchasing_signup()
+	Department =Department()
+	while True:	
+		for data in jdata['主選單']:
+			print(data)
+		response = input("輸入選項: ")
+		
+		if response == '1':
+			Payment.payment_signup()
+		elif response == '2':
+			Payment.budget_source()
+		elif response == '3':
+			Payment.form_input()
+		elif response == '4':
+			Purchase.purchasing_signup()
+		elif response == '5':
+			Department.department_entry()
+		else:
+			print("\n...請輸入選項號碼\n")
 
 

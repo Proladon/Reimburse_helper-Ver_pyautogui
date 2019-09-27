@@ -11,6 +11,7 @@ def move_click(data):
 	auto.click()
 
 def focus_dialog(title):
+	time.sleep(1)
 	win = gw.getWindowsWithTitle(title)[0]
 	win.activate()
 	win.maximize()
@@ -37,9 +38,9 @@ def payment_form_input():
 	data_xyz = data['明細檔輸入']
 	move_click(data_xyz['建議規格及型號'])
 	text_input('無')
-	move_click(data_xyz['單位'])
-	text_input('無')
 	move_click(data_xyz['建議廠牌'])
+	text_input('無')
+	move_click(data_xyz['單位'])
 	text_input('無')
 	move_click(data_xyz['數量'])
 	auto.hotkey('ctrl', 'a')
