@@ -25,8 +25,7 @@ class Purchasing:
                 focus_win()
                 move_click(data_xyz['查詢鈕'])
                 time.sleep(1)
-                t = "http://gasys.ttu.edu.tw/?filter=&tablenames=Supplier&fields=SupplierId,shortDescription&sort=Su - Internet Explorer"
-                focus_dialog(t)
+                focus_dialog(data_xyz['廠商'])
                 move_click(data_xyz['使用者自行採購'])
                 move_click(data_xyz['整筆儲存'])
                 auto.hotkey('enter')

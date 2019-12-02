@@ -19,7 +19,7 @@ class Payment:
 
 	def budget_source(self):
 		data = jdata['經費來源']
-		source_list = f"1.{data[0]}\n2.{data[1]}\n3.{data[2]}\n4.{data[3]}"
+		source_list = f"1.{data[0]}\n2.{data[1]}\n3.{data[2]}\n4.{data[3]}\n5.{data[4]}"
 		checker = True
 		data = jdata['支付證明申請']
 		data_xyz = data['經費來源單位']
@@ -51,6 +51,9 @@ class Payment:
 				checker = False
 			elif source == '4':
 				works_set('大同公司')
+				checker = False
+			elif source == '5':
+				works_set('基礎案')
 				checker = False
 
 	# 採購表單輸入
